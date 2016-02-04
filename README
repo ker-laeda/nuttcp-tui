@@ -1,0 +1,56 @@
+﻿WHAT IS IT?
+
+	Nuttcp-tui - front-end Shell-script, which provides access to the Text
+	User Interface (TUI) for nuttcp console utility. The script written in Bash.
+	
+	
+WHAT CAN HE?
+
+	1) Run/stop nuttcp server mode.
+	2) Run the bandwith test with fixed time of test.
+	3) Create a detailed log of the utility to the specified location.
+	4) Make shadow copy of log and send a it via FTP.
+	5) The script performs validation of input data.
+	
+	
+WHY DO IT?
+
+	Not all customers are able to use the console, and it is sometimes easier to
+	use TUI for this.
+
+	
+OPTIONS
+
+	To configure the script you need to open it with any text editor and change
+	the values some variables (do not forget to save your changes).
+	FTP_HOST - address of the FTP server
+	FTP_USER - user name on the FTP server
+	FTP_PASS - password on the FTP server
+	SEND_FILE - directory for reports on the FTP server
+	LOG_DIR - directory for reports on the local disk
+	LOG_NAME - report file name
+	TEST_STR - options and run the utility nuttcp
+
+
+HOW TO INSTALL AND RUN?
+
+	Just copy the script to the desired folder and set the permissions to execute.
+	If you intend to use the script from the non-privileged mode, it is recommended
+	to create an additional script (for example, run-nuttcp-tui.sh) contain this:
+	------------------------------------------------------
+	# /bin/sh
+	bash /home/user/nuttcp-tui.sh
+	------------------------------------------------------
+	Add run-nuttcp-tui.sh in sudoers for run as root without entering sudo password
+	(sudo run-nuttcp-tui.sh).
+	Next, set to files and nuttcp-tui.sh run-nuttcp-tui.sh the rights for all on execute only
+	-rwxrwx-x (771).
+	It is need for the security that would be an unprivileged user could not get
+	root rights and see contents of the script.
+
+	
+ABOUT AUTOR
+
+	Nikolay Klepikov (a.k.a. Ker Laeda or Darkwolf)
+	info@dwhome.ru
+	http://uid.me/dwhome
